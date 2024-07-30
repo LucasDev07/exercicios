@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Pessoa mais velha</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Pessoa mais velha</h1>
+
+            <label for="txtQtdePessoas">Informe a quantidade de pessoas:</label><input type="number" id="txtQtdePessoas">
+
+            <label for="txtNomes">Informe os nomes:</label><input type="text" id="txtNomes">
+            
+            <label for="txtIdades">Informe as idades:</label><input type="number" id="txtIdades">
+            
+            <button onclick="botao_click()">Arma</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        var nomes = [];
+
+        var idades = [];
+
+        function botao_click() {
+
+           var txtQtdePessoas = document.getElementById("txtQtdePessoas");
+           
+           var qtdePessoas = parseInt(txtQtdePessoas.value);
+
+           var txtNomes = document.getElementById("txtNomes");
+
+           var nome = txtNomes.value;
+
+           var txtIdades = document.getElementById("txtIdades");
+
+           var idade = parseInt(txtIdades.value)
+
+           if (nomes.length < qtdePessoas) {
+            
+                nomes.push(nome);                
+                idades.push(idade);
+           
+                txtNomes.value = "";
+                txtIdades.value = "";
+           }
+
+           if (nomes.length == qtdePessoas) {
+                
+               var maiorIdade;
+               var posicaoMaiorIdade;
+              
+               for(i = 0; i < idades.length; i++) {
+                     
+                    /*var "idade" varre todas as idades do array "idades" no índice "i"(que representa o indice de cada elemento a cada nova iteração, e a 
+                    cada  nova iteração, "idade" se atualiza*/
+                    var idade = idades[i];
+
+                    if(maiorIdade == undefined || idade > maiorIdade) {
+                        
+                        /*"maior idade" passa a receber o valor de "idade", e a cada iterção, "idade" é comparada com "maior idade", atualizando seu valor 
+                        ou mantendo, dependendo se "maior idade" passar a ser maior que "idade"(a cada novo índice em questão).*/
+                        maiorIdade = idade;
+
+                        /* "posicao Maior Idade, só passa a existir quando no if, "idade" for maior que "maior idade", atualizando "i". */
+                        posicaoMaiorIdade = i;
+                    }
+               }
+
+               var pessoaMaisVelha = nomes[posicaoMaiorIdade];
+
+               alert("A pessoa mais velha é: " + pessoaMaisVelha);
+
+                txtNomes.value = "";
+                txtIdades.value = "";
+                txtQtdePessoas.value = "";
+
+                nomes = [];
+                idades = [];
+           }
+        }
+
+    </script>
+
+</body>
+</html>

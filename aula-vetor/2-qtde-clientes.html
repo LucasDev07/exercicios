@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Clientes quantidade</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Clientes quantidade</h1>
+
+            <p>Parágrafo</p>
+
+            <label for="txtQtdeClientes">Informe a quantidade de Clientes que serão listados:</label><input type="number" id="txtQtdeClientes">
+
+            <label for="txtClientes">Informe os nomes:</label><input type="text" id="txtClientes">
+
+            <button onclick="botao_click()">Listar</button>
+
+        </div>
+    </div>
+
+    <script>
+        
+        var clientes = [];    
+         
+        function botao_click() {
+
+            /*txt representa as caixas de texto.*/
+            var txtQtdeClientes = document.getElementById("txtQtdeClientes");
+            var txtClientes = document.getElementById("txtClientes");
+
+            var qtdeClientes = parseInt(txtQtdeClientes.value);
+            var cliente = txtClientes.value;
+
+            if(clientes.length < qtdeClientes) {
+
+                clientes.push(cliente);
+
+                txtClientes.value = ""; 
+            }
+ 
+            if(clientes.length == qtdeClientes) {
+                
+                for (i = 0; i < clientes.length; i++) {
+                   
+                    var cliente = clientes[i]
+                }
+
+                alert(clientes);
+            }
+        }
+
+    </script>
+
+</body>
+</html>

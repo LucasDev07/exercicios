@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Glicose</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Glicose</h1>
+
+            <p>Digite a quantidade de glicose no seu corpo:</p>
+
+            <label for="txt1">Digite abaixo a quantidade de glicose no seu corpo</labe><input type="number" id="txtGlicoseTexto">
+
+            <button onclick="botao_click()">Botão</button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function botao_click() {
+
+            //você irá programar aqui!
+            var glicoseTexto = document.getElementById("txtGlicoseTexto").value;
+
+            var glicoseNumero = parseFloat(glicoseTexto);
+
+            if(glicoseNumero <= 100) {
+                alert("Normal");
+            }
+            else if(glicoseNumero > 100 && glicoseNumero <= 140) {
+                alert("Elevado");
+            }
+            else if(glicoseNumero > 140) {
+                alert("Diabetes");
+            }
+        }
+
+    </script>
+
+</body>
+</html>

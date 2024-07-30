@@ -1,0 +1,10 @@
+											IMPORTANTE!!!!!
+SEMPRE QUE SE FOR "VARRER" UM ARRAY, CRIA-SE UM LOOP DE REPETIÇÃO PARA VERIFICAR CADA POSIÇÃO DO ARRAY!!!!
+
+											EXEMPLO:
+							var numeros = [];
+					
+							for (i = 0; i < numeros.length; i++) {
+
+								var numero = numeros[i];
+							}

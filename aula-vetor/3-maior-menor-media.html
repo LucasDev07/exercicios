@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Maior, Menor e Média</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+            <h1>Maior, Menor e Média</h1>
+
+            <label for="txtQtdeNumeros">Informe a quantidade de números desejada</label><input type="number" id="txtQtdeNumeros">
+
+            <label for="txtNumero">Informe os numeros</label><input type="number" id="txtNumero">
+
+            <button onclick="botao_click()">Armazenar</button>
+
+        </div>
+    </div>
+
+    <script>
+
+          var numeros = [];
+
+        function botao_click() {
+
+               /*txt representa caixa de texto.*/
+               var txtQntdeNumeros = document.getElementById("txtQtdeNumeros");
+               var txtNumero = document.getElementById("txtNumero");
+
+               var qtdeNumeros = parseInt(txtQntdeNumeros.value);
+               var numero = parseInt(txtNumero.value);
+
+               if (numeros.length < qtdeNumeros) {
+
+                    numeros.push(numero);
+               }
+
+              if (numeros.length == qtdeNumeros) {
+              
+                 var maiorNumero;
+                 var menorNumero;
+                 var soma = 0;
+                 var media;             
+
+                 for (i = 0; i < numeros.length; i++) {
+
+                     var numero = numeros[i];
+
+                     if(maiorNumero == undefined || numero > maiorNumero) {
+                          maiorNumero = numero;
+                     } 
+                    
+                     if(menorNumero == undefined || numero < menorNumero) {
+                          menorNumero = numero;
+                     }
+                     soma += numero;
+                }
+                
+                media = soma / numeros.length;
+
+                alert("O maior numero é: " + maiorNumero + " , o menor número é: " + menorNumero + " e a média é " + media);
+
+                txtQntdeNumeros.value = "";
+                txtNumero.value = "";
+                numeros = [];
+             }
+        }
+
+    </script>
+
+</body>
+</html>

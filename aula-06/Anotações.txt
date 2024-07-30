@@ -1,0 +1,20 @@
+													OBS:
+
+* A DIFERENÇA ENTRE MARGIN E PADDING EM CSS, É QUE MARGIN DÁ ESPAÇAMENTOS EXTERNOS AO ELEMENTO, ENQUANTO PADDING DÁ EPAÇAMENTOS 
+INTERNOS.
+
+*											TIPOS DE DISPLAYS:
+display: block;
+Elemento é exibido como um bloco, ocupando a largura total disponível. Inicia em uma nova linha.
+
+display: inline;
+Elemento é exibido na mesma linha que os elementos adjacentes. Apenas ocupa a largura necessária.
+
+display: inline-block;
+Combina características de block e inline. Elemento é exibido na mesma linha, mas pode ter largura e altura definidas.
+
+display: flex;
+Define um contêiner flexível para disposição dos elementos filhos. Permite criação de layouts complexos e responsivos.
+
+display: none;
+Elemento não é exibido na página e não ocupa espaço.
